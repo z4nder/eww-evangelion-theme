@@ -49,45 +49,43 @@
 (defpoll time :interval "10s"
   "date '+%H:%M %b %d, %Y'")
 
-; (defwidget left []
-;   (box 
-;     :orientation "h" 
-;     :space-evenly false  
-;     :halign "end"
-;     :class "left_modules"
-;     (workspaces)
-;   )
-; )
-    
-; (defwidget right []
-;   (box 
-;     :orientation "h" 
-;     :space-evenly false  
-;     :halign "start"
-;     :class "right_modules"
-;     (workspaces)
-;   )
-; )
-    
-; (defwidget center []
-;   (box 
-;     :orientation "h" 
-;     :space-evenly false  
-;     :halign "center"
-;     :class "center_modules"
-;     (music)
-;   )
-; )
-
-(defwidget bar []
-  (centerbox 
-    :class "bar_class"
-    :orientation "h"
-    (workspaces)
-    (music)
+(defwidget left []
+  (box 
+    :orientation "h" 
+    :space-evenly false  
+    :halign "end"
+    :class "left_modules"
     (sidestuff)
   )
 )
+    
+(defwidget center []
+  (box 
+    :orientation "h" 
+    :space-evenly false  
+    :halign "center"
+    :class "center_modules"
+    (music)
+  )
+)
+
+(defwidget right []
+  (box 
+    :orientation "h" 
+    :space-evenly false  
+    :halign "start"
+    :class "right_modules"
+    (workspaces)
+  )
+)
+
+(defwidget bar []
+  (box :class "bar_class"
+       :orientation "h"
+  (right)
+  (center)
+  (left)
+))
 
 (defwindow bar
   :monitor 0

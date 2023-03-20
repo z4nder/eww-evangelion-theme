@@ -1,4 +1,5 @@
 $purple: #765898;
+$darkPurple: #523874;
 $green: #52d053;
 $orange: #e6770b;
 $red: #d3290f;
@@ -12,11 +13,28 @@ $black: #000000;
 // Bar
 
 .bar_class {
-  background-color: $purple;
+  background-image: linear-gradient(to bottom, $purple 30%, $darkPurple 100% *50);
+  // background-color: $purple;
   color: $green;
   padding: .3rem;
   border-radius: 16px;
+  margin: 8px 25px 0px 25px;
 }
+
+// Positions 
+.left_modules {
+  font-size: 18;
+  padding: 5px 25px 5px 0px;
+}
+.center_modules {
+  font-size: 18;
+  padding: 5px 25px 5px 0px;
+}
+.right_modules {
+  font-size: 18;
+  padding: 5px 0px 5px 25px;
+}
+
 
 // Workspace
 
