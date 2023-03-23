@@ -7,18 +7,18 @@ $black: #000000;
 
 
 * {
-  all: unset; //Unsets everything so you can style everything from scratch
+ 	all: unset;
+	font-family: feather;
+	font-family: DaddyTimeMono NF;
 }
 
 // Bar
-
 .bar_class {
   background-image: linear-gradient(to bottom, $purple 30%, $darkPurple 100% *50);
-  // background-color: $purple;
   color: $green;
   padding: .3rem;
   border-radius: 16px;
-  margin: 8px 25px 0px 25px;
+  margin: 8px 10px 0px 40px;
 }
 
 // Positions 
@@ -37,19 +37,11 @@ $black: #000000;
 
 
 // Workspace
-
 .workspaces button:hover {
   color: #D35D6E;
 }
 
-
-// Styles on classes (see eww.yuck for more information)
-
-.sidestuff slider {
-  all: unset;
-  color: #ffd5cd;
-}
-
+// Actions
 .metric scale trough highlight {
   all: unset;
   background-color: $orange;
@@ -80,10 +72,5 @@ $black: #000000;
   margin-left: 10px;
   margin-right: 20px;
 }
-.label-ram {
-  font-size: large;
-}
-.workspaces button:hover {
-  color: $orange;
-}
+
 

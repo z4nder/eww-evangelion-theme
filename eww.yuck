@@ -1,19 +1,42 @@
 ;; Variables
 (deflisten workspace "scripts/workspace")
+(defpoll volume_percent :interval "1s" "scripts/getvol")
 
-
+(defwidget speaker[]
+  (box 
+    :orientation "h"
+    :class "metric"
+    :space-evenly false
+    (image 
+      :class "speaker_icon"
+      :path "./images/speaker.png"
+      :image-width 20
+      :image-height 20
+    )
+    (scale 
+      :class "volbar"
+      :min 0
+      :max 100
+      :value volume_percent
+      :tooltip "${volume_percent}%"
+      :onchange "amixer -D pulse sset Master {}%"
+    )
+  )
+)
 
 (defwidget sidestuff []
   (box :class "sidestuff" :orientation "h" :space-evenly false :halign "end"
-    (metric :label "🔊"
-            :value volume
-            :onchange "amixer -D pulse sset Master {}%")
-    (metric :label ""
-            :value {EWW_RAM.used_mem_perc}
-            :onchange "")
-    (metric :label "💾"
-            :value {round((1 - (EWW_DISK["/"].free / EWW_DISK["/"].total)) * 100, 0)}
-            :onchange "")
+    (speaker)
+    (metric 
+      :label ""
+      :value {EWW_RAM.used_mem_perc}
+      :onchange ""
+    )
+    (metric 
+      :label "💾"
+      :value {round((1 - (EWW_DISK["/"].free / EWW_DISK["/"].total)) * 100, 0)}
+      :onchange ""
+    )
     time))
     
 (defwidget workspaces []
@@ -28,23 +51,25 @@
 
 
 (defwidget metric [label value onchange]
-  (box :orientation "h"
-       :class "metric"
-       :space-evenly false
+  (box 
+    :orientation "h"
+    :class "metric"
+    :space-evenly false
     (box :class "label" label)
-    (scale :min 0
-           :max 101
-           :active {onchange != ""}
-           :value value
-           :onchange onchange)))
+    (scale 
+      :min 0
+      :max 101
+      :active {onchange != ""}
+      :value value
+      :onchange onchange)
+)
+)
 
 
 
 (deflisten music :initial ""
   "playerctl --follow metadata --format '{{ artist }} - {{ title }}' || true")
 
-(defpoll volume :interval "1s"
-  "scripts/getvol")
 
 (defpoll time :interval "10s"
   "date '+%H:%M %b %d, %Y'")
