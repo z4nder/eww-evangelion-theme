@@ -27,7 +27,7 @@
 (defwidget processor[]
   (box 
     :orientation "h"
-    :class "percentage_metric_box"
+    :class "percentage_metric_box percentage_metric_text_processor"
     :space-evenly false
     (image 
       :class "percentage_metric_icon"
@@ -69,7 +69,8 @@
 )
     
 (defwidget workspaces []
-      (literal :content workspace))
+  (literal :content workspace)
+)
 
 (defwidget music []
   (box :class "music"

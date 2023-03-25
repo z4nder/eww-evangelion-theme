@@ -18,7 +18,9 @@ $black: #000000;
   color: $green;
   padding: .3rem;
   border-radius: 16px;
-  margin: 8px 10px 0px 40px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 5px;
 }
 
 // Positions 
@@ -37,8 +39,8 @@ $black: #000000;
 
 
 // Workspace
-.workspaces button:hover {
-  color: #D35D6E;
+.works button:hover {
+  color: $orange;
 }
 
 // Metric percentage 
@@ -51,6 +53,8 @@ $black: #000000;
 .percentage_metric_text {
   color: $orange;
   margin-left: 10px;
+}
+.percentage_metric_text_processor{
   margin-right: 20px;
 }
 
