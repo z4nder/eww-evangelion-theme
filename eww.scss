@@ -41,7 +41,20 @@ $black: #000000;
   color: #D35D6E;
 }
 
-// Actions
+// Metric percentage 
+.percentage_metric_box {
+
+}
+.percentage_metric_icon {  
+  margin-left: 10px;
+  margin-right: 10px;
+  
+}
+.percentage_metric_text {
+  color: $orange;
+}
+
+// Metric
 .metric scale trough highlight {
   all: unset;
   background-color: $orange;
@@ -70,7 +83,7 @@ $black: #000000;
   min-height: 3px;
   min-width: 50px;
   margin-left: 10px;
-  margin-right: 20px;
+  margin-right: 10px;
 }
 
 

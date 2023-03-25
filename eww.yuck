@@ -24,14 +24,28 @@
   )
 )
 
+(defwidget processor[]
+  (box 
+    :orientation "h"
+    :class "percentage_metric_box"
+    :space-evenly false
+    (image 
+      :class "percentage_metric_icon"
+      :path "./images/processor.png"
+      :image-width 20
+      :image-height 20
+    )
+    (label 
+      :class "percentage_metric_text"
+      :text  "${round(EWW_CPU.avg, 0)}%"
+    )   
+  )
+)
+
 (defwidget sidestuff []
   (box :class "sidestuff" :orientation "h" :space-evenly false :halign "end"
     (speaker)
-    (metric 
-      :label ""
-      :value {EWW_RAM.used_mem_perc}
-      :onchange ""
-    )
+    (processor)
     (metric 
       :label "💾"
       :value {round((1 - (EWW_DISK["/"].free / EWW_DISK["/"].total)) * 100, 0)}
