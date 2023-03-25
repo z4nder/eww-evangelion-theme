@@ -42,16 +42,31 @@
   )
 )
 
+(defwidget ram[]
+  (box 
+    :orientation "h"
+    :class "percentage_metric_box"
+    :space-evenly false
+    (image 
+      :class "percentage_metric_icon"
+      :path "./images/ram.png"
+      :image-width 35
+      :image-height 35
+    )
+    (label 
+      :class "percentage_metric_text"
+      :text  "${round(EWW_RAM.used_mem/1000000000, 2)}/${round(EWW_RAM.total_mem/1000000000, 2)}"
+    )   
+  )
+)
+
 (defwidget sidestuff []
   (box :class "sidestuff" :orientation "h" :space-evenly false :halign "end"
     (speaker)
     (processor)
-    (metric 
-      :label "💾"
-      :value {round((1 - (EWW_DISK["/"].free / EWW_DISK["/"].total)) * 100, 0)}
-      :onchange ""
-    )
-    time))
+    (ram)
+  )
+)
     
 (defwidget workspaces []
       (literal :content workspace))

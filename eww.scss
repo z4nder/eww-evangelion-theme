@@ -46,12 +46,12 @@ $black: #000000;
 
 }
 .percentage_metric_icon {  
-  margin-left: 10px;
-  margin-right: 10px;
   
 }
 .percentage_metric_text {
   color: $orange;
+  margin-left: 10px;
+  margin-right: 20px;
 }
 
 // Metric
@@ -83,7 +83,7 @@ $black: #000000;
   min-height: 3px;
   min-width: 50px;
   margin-left: 10px;
-  margin-right: 10px;
+  margin-right: 20px;
 }
 
 

@@ -1,0 +1,8 @@
+#!/bin/sh
+printf "%.0f\n" $(
+    free -g -h -t | 
+    grep Mem | 
+    sed 's/Gi//g' |
+    sed 's/,/./g' |
+    awk '{print $2}'
+)
