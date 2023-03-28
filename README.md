@@ -14,6 +14,7 @@ Alternatively, use this script:
 
 - Set the name of your primary monitor
 - chmod +x ./run_topbar.sh
+- ./run_topbar.sh
 
 <img 
     src="./screenshots/topbar.png"  
