@@ -1,6 +1,4 @@
-<h1 align="center"> <a href="https://github.com/elkowar/eww"> EWW - Evangelion Theme <h1> </a>
-
-## How to install
+# <a href="https://github.com/elkowar/eww">  EWW - Evangelion Theme </a> 
 
 ### Requiriments
 - eww(https://github.com/elkowar/eww)
